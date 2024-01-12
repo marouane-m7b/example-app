@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hello/{nom}/{prenom?}/{age?}', function ($nom, $prenom = 'mahboub', $age = "20") {
+    return "Je m'appelle " . $nom . " " . $prenom . ",j'ai " . $age . " ans";
+});
+
+// Route::view('/hello', 'hello');
